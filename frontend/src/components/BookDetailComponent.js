@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState, useContext } from 'react';
 import {
     Navbar,
     NavbarBrand,
@@ -24,6 +24,7 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import Header from './Header';
+import { GlobalState } from '../GlobalState';
 
 export default function BookDetail() {
     const imgStyle = {
@@ -32,6 +33,9 @@ export default function BookDetail() {
     }
     const [book, setBook] = useState({});
     const val=useParams();
+
+    const state = useContext(GlobalState)
+    const addCart = state.userAPI.addCart;
     
     useEffect(() => {
         async function fetchMyAPI() {
@@ -51,12 +55,11 @@ return (
                 <div className="box-detail">
                     <div className="row">
                         <h2>{book.title}</h2>
-                        <h6>#id: {book.book_id}</h6>
                     </div> 
                     <span>$ {book.price}</span>
                     <p>{book.description}</p>
                     <p>{book.content}</p>
-                        Buy Now
+                        <Button onClick={() => addCart(book)}>Add to Cart</Button>
                 </div>
             </div>
     </div> 

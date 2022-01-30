@@ -23,14 +23,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faPhone, faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { MenuItem, Badge, IconButton } from '@mui/material';
 import { Link } from 'react-scroll';
-
+// import Cart from './CartComponent';
+import { GlobalState } from '../GlobalState';
 class Header extends Component {
+    
+
     constructor(props) {
         super(props);
         this.state = {
             toggle: true
         }
+        
+        // console.log(cart);
     }
+
+    // componentDidMount(){
+    //     console.log(contextType.userAPI.cart);
+    // }
 
     logoutUser = async () => {
         await axios.get('/user/logout')
@@ -49,7 +58,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div >
+            <div sticky='top'>
                 <Navbar dark expand="md" color='primary'>
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNavbar} />
@@ -69,20 +78,26 @@ class Header extends Component {
                                     {(localStorage.getItem("firstLogin")) ? <NavLink to="/" onClick={this.logoutUser}><Button> Logout</Button></NavLink> : <NavLink className="nav-link" to='/login'><Button  > Login</Button></NavLink>}
                                 </NavItem>
                                 <MenuItem>
-                                    <IconButton aria-label="Show cart items" color="inherit">
-                                        <Badge badgeContent={2} color="secondary">
-                                            <FontAwesomeIcon icon={faShoppingCart} />
-                                        </Badge>
-                                    </IconButton>
-                                    <p>Cart</p>
+                                    {(localStorage.getItem("firstLogin")) ?
+                                        <>
+                                            <IconButton aria-label="Show cart items" color="inherit">
+                                                <Badge color="secondary">
+
+                                                    <NavLink className="nav-link" to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></NavLink>
+                                                    {/* <Cart props={this.state.cart}/> */}
+                                                </Badge>
+                                            </IconButton>
+                                            <p>Cart</p>
+                                        </>
+                                        :
+                                        null
+                                    }
                                 </MenuItem>
                             </Nav>
 
                         </Collapse>
                     </div>
                 </Navbar>
-
-
             </div>
         );
     }

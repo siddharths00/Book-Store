@@ -8,7 +8,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 
 import Main from './components/MainComponent';
-
+import Cart from './components/CartComponent';
 import { BrowserRouter } from 'react-router-dom';
 import React, { Component } from 'react';
 import { Routes, Route, Redirect, withRouter } from 'react-router-dom';
@@ -19,26 +19,27 @@ import {
 } from 'reactstrap';
 // import Cart from './components/CartComponent';
 
-// import { DataProvider } from './GlobalState'
+import { DataProvider } from './GlobalState'
+import Books from './components/BooksComponent';
+import Jumbotron from './components/JumbotronComponent';
 
 
 
 function App() {
   return (
-    // <DataProvider>
-      <BrowserRouter>
+    <DataProvider>
+      {/* // <BrowserRouter> */}
         <div className="App">
           <Routes>
             <Route exact path='/' element={<Main />} />
             <Route exact path='/home' element={<Main />} />
             <Route exact path='/books/:id' element={<BookDetail />} />
             <Route exact path='/login' element={<Login />} />
-            <Route exact path='/register' element={<Register />} />
-            {/* <Route exact path='/cart' element={<Cart />} /> */}
+            <Route exact path='/cart' element={<Cart />} />
           </Routes>
         </div>
-      </BrowserRouter>
-    // </DataProvider>
+      {/* // </BrowserRouter> */}
+    </DataProvider>
   );
 }
 

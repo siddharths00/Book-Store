@@ -32,13 +32,6 @@ class Main extends Component {
         }
     }
 
-    fetchCart = async () => {
-        // const response
-    }
-
-    addToCart = async (productId, quantity) => {
-        
-    }
 
     render() {
         return (

@@ -49,7 +49,7 @@ const bookCtrl = {
     getBooks: async(req, res) =>{
         try {
             const features = new APIfeatures(Books.find(), req.query)
-            .filtering().sorting().paginating()
+            // .filtering().sorting().paginating()
 
             const books = await features.query
 
