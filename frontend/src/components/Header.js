@@ -33,13 +33,7 @@ class Header extends Component {
         this.state = {
             toggle: true
         }
-        
-        // console.log(cart);
     }
-
-    // componentDidMount(){
-    //     console.log(contextType.userAPI.cart);
-    // }
 
     logoutUser = async () => {
         await axios.get('/user/logout')

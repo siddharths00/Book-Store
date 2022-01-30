@@ -35,6 +35,7 @@ function App() {
             <Route exact path='/home' element={<Main />} />
             <Route exact path='/books/:id' element={<BookDetail />} />
             <Route exact path='/login' element={<Login />} />
+            <Route exact path='/register' element={<Register />} />
             <Route exact path='/cart' element={<Cart />} />
           </Routes>
         </div>

@@ -27,14 +27,6 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { GlobalState } from '../GlobalState';
 function Books() {
 
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         books: []
-    //     };
-    // }
-
     const [books, setBooks] = useState([]);
 
     const state = useContext(GlobalState)
@@ -56,7 +48,7 @@ function Books() {
 
         return (
             <div key={book.id} className='col-4 mt-5'>
-                <Card style={{ width: "80%", height: '500px' }}>
+                <Card style={{ width: "80%", height: '525px' }}>
                     <NavLink className="nav-link" to={{
 
                         pathname: `/books/${book.book_id}`,
@@ -74,11 +66,6 @@ function Books() {
                             </div>
                             <Typography dangerouslySetInnerHTML={{ __html: book.description }} variant="body2" color="textSecondary" component="p" />
                         </CardContent>
-                        <CardActions disableSpacing >
-
-
-
-                        </CardActions>
                     </NavLink>
                     <IconButton style={{marginBottom:'20px'}} aria-label="Add to Cart" id={book.book_id} onClick={() => addCart(book)}>
                         <FontAwesomeIcon icon={faCartPlus} id={book.book_id} />

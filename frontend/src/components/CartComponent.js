@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { GlobalState } from '../GlobalState'
 import axios from 'axios'
-// import PaypalButton from './PaypalButton'
 import './Cart.css'
 
 
@@ -10,9 +9,6 @@ import { Card, CardContent, Typography } from '@mui/material';
 
 import { Media } from 'reactstrap';
 import Header from './Header';
-
-
-// const theme = createTheme();
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -145,39 +141,8 @@ function Cart() {
                     </Media>
                 </div>
             </div>
-            {
-                // cart.map(book => (
-                // <div className="detail cart" key={book._id}>
-                //     <img src={book.images.url} alt="" />
-
-                //     <div className="box-detail">
-                //         <h2>{book.title}</h2>
-
-                //         <h3>$ {book.price * book.quantity}</h3>
-                //         <p>{book.description}</p>
-                //         <p>{book.content}</p>
-
-                //         <div className="amount">
-                //             <button onClick={() => decrement(book._id)}> - </button>
-                //             <span>{book.quantity}</span>
-                //             <button onClick={() => increment(book._id)}> + </button>
-                //         </div>
-
-                //         <div className="delete" 
-                //         onClick={() => removebook(book._id)}>
-                //             X
-                //         </div>
-                //     </div>
-                // </div>
-
-                // ))
-            }
-
             <div className="total">
-                <h3>Total: $ {total}</h3>
-                {/* <PaypalButton
-                total={total}
-                tranSuccess={tranSuccess} /> */}
+                <h3>Total: ₹ {total}</h3>
             </div>
         </div>
     )

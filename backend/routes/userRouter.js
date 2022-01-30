@@ -3,7 +3,6 @@ const userCtrl = require('../controllers/userControl')
 const auth = require('../middleware/auth')
 
 const Users = require('../models/userModel')
-// const Payments = require('../models/paymentModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 

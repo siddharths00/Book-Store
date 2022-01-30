@@ -1,5 +1,4 @@
 import React, {createContext, useState, useEffect} from 'react'
-import BooksAPI from './api/booksApi'
 import UserAPI from './api/userApi'
 
 import axios from 'axios'
@@ -31,7 +30,6 @@ export const DataProvider = ({children}) =>{
     
     const state = {
         token: [token, setToken],
-        BooksAPI: BooksAPI(),
         userAPI: UserAPI(token)
     }
 

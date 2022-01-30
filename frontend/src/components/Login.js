@@ -43,10 +43,7 @@ export default function Login() {
                     window.location.href = "/";
                 })
                 .catch(function (error) {
-                    console.log("hello");
                     if (error.response) {
-                        console.log(error.response.data);
-                        console.log(error.response.status);
                         setErrors(`Status code-${error.response.status}    ${error.response.data.msg}`);
                     }
                     else {

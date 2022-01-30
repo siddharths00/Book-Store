@@ -58,7 +58,6 @@ return (
                     </div> 
                     <span>$ {book.price}</span>
                     <p>{book.description}</p>
-                    <p>{book.content}</p>
                         <Button onClick={() => addCart(book)}>Add to Cart</Button>
                 </div>
             </div>
