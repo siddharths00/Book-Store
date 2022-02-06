@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { GlobalState } from '../GlobalState'
+import { GlobalState } from '../../GlobalState'
 import axios from 'axios'
 import './Cart.css'
 
@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { Card, CardContent, Typography } from '@mui/material';
 
 import { Media } from 'reactstrap';
-import Header from './Header';
+import Header from '../main/Header';
 
 function Cart() {
     const state = useContext(GlobalState)

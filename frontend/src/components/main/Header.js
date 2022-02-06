@@ -6,15 +6,7 @@ import {
     NavbarToggler,
     Collapse,
     NavItem,
-    Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    Form,
-    FormGroup,
-    Input,
-    Label,
-    Media
+    Button
 } from 'reactstrap';
 import axios from 'axios'
 
@@ -23,10 +15,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faPhone, faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { MenuItem, Badge, IconButton } from '@mui/material';
 import { Link } from 'react-scroll';
-// import Cart from './CartComponent';
-import { GlobalState } from '../GlobalState';
 class Header extends Component {
-    
+
 
     constructor(props) {
         super(props);
@@ -68,25 +58,27 @@ class Header extends Component {
                                 <NavItem>
                                     <NavLink className="nav-link" to='/'><Link to="footer" spy={true} className="nav-link"><FontAwesomeIcon icon={faPhone} /> Contact Us</Link></NavLink>
                                 </NavItem>
-                                <NavItem right>
-                                    {(localStorage.getItem("firstLogin")) ? <NavLink to="/" onClick={this.logoutUser}><Button> Logout</Button></NavLink> : <NavLink className="nav-link" to='/login'><Button  > Login</Button></NavLink>}
-                                </NavItem>
-                                <MenuItem>
+                                <MenuItem className='ms-auto'>
                                     {(localStorage.getItem("firstLogin")) ?
                                         <>
                                             <IconButton aria-label="Show cart items" color="inherit">
                                                 <Badge color="secondary">
 
                                                     <NavLink className="nav-link" to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></NavLink>
-                                                    {/* <Cart props={this.state.cart}/> */}
                                                 </Badge>
                                             </IconButton>
-                                            <p>Cart</p>
                                         </>
                                         :
                                         null
                                     }
                                 </MenuItem>
+
+                                <NavItem >
+                                    {(localStorage.getItem("firstLogin")) ? <NavLink to="/" onClick={this.logoutUser}><Button> Logout</Button></NavLink> : <NavLink to='/login'><Button  > Login</Button></NavLink>}
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink to="/addbook" ><Button> Add more books</Button></NavLink>
+                                </NavItem>
                             </Nav>
 
                         </Collapse>

@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
-import Header from './Header';
+import Header from '../main/Header';
 const theme = createTheme();
 
 function Register() {
@@ -32,7 +32,6 @@ function Register() {
         e.preventDefault()
         try {
             await axios.post('/user/register', { ...user }).then(() => {
-                // alert("B");
                 localStorage.setItem('firstLogin', true)
                 window.location.href = "/";
             })
@@ -70,7 +69,7 @@ function Register() {
                         </Avatar>
                         <Typography component="h1" variant="h5">
                             Sign Up
-                            {errors.length == 0 ? null : <Alert severity="error">{errors}</Alert>}
+                            {errors.length === 0 ? null : <Alert severity="error">{errors}</Alert>}
                         </Typography>
                         <Box component="form" onSubmit={registerSubmit} noValidate sx={{ mt: 1 }}>
                             <TextField

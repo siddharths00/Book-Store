@@ -21,10 +21,9 @@ app.use(cookies());
 
 app.use(cors());
 
-const url = process.env.URL;
 
 const URI = process.env.MONGODB_URL
-mongoose.connect("mongodb+srv://siddharths:299@bookstore.b2gdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", err =>{
+mongoose.connect(URI, err =>{
     if(err) throw err;
     console.log('Connected to MongoDB')
 })

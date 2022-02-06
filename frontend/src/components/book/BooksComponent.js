@@ -1,19 +1,5 @@
-import React, { Component, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
-    Navbar,
-    NavbarBrand,
-    Nav,
-    NavbarToggler,
-    Collapse,
-    NavItem,
-    Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    Form,
-    FormGroup,
-    Input,
-    Label,
     Media
 } from 'reactstrap';
 
@@ -21,25 +7,36 @@ import axios from 'axios'
 
 
 import { NavLink } from 'react-router-dom';
-import { Card, CardMedia, CardActions, CardContent, Typography, IconButton } from '@mui/material';
+import { Card, CardContent, Typography, IconButton, Button } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { GlobalState } from '../GlobalState';
+import { GlobalState } from '../../GlobalState';
 function Books() {
 
     const [books, setBooks] = useState([]);
-
+    const [show, setShow] = useState(false);
     const state = useContext(GlobalState)
     const addCart = state.userAPI.addCart;
-
+    const isAdmin = state.userAPI.isAdmin;
+    const tempUser = state.userAPI.user;
+    const [token] = state.token;
     useEffect(() => {
         async function myfunc() {
             let data = await axios.get('/api/books');
             setBooks(data.data.books);
+            setShow(isAdmin);
         };
         myfunc();
 
-    }, []);
+    }, [isAdmin, show]);
+
+    const removebook = async (id) => {
+        await axios.delete(`/api/books/${id}`, {
+            headers: { Authorization: token }
+        });
+        window.location.reload();
+    }
+
     const imgStyle = {
         maxHeight: 150,
         maxWidth: 150
@@ -48,7 +45,14 @@ function Books() {
 
         return (
             <div key={book.id} className='col-4 mt-5'>
-                <Card style={{ width: "80%", height: '525px' }}>
+
+                <Card style={{ width: "80%", height: '540px' }}>
+                    {
+                        tempUser[0].role ?
+                            <Button variant="outlined" color="error" onClick={() => removebook(book._id)}>Remove</Button>
+                            :
+                            null
+                    }
                     <NavLink className="nav-link" to={{
 
                         pathname: `/books/${book.book_id}`,
@@ -67,9 +71,10 @@ function Books() {
                             <Typography dangerouslySetInnerHTML={{ __html: book.description }} variant="body2" color="textSecondary" component="p" />
                         </CardContent>
                     </NavLink>
-                    <IconButton style={{marginBottom:'20px'}} aria-label="Add to Cart" id={book.book_id} onClick={() => addCart(book)}>
+                    <IconButton style={{ marginBottom: '20px' }} aria-label="Add to Cart" id={book.book_id} onClick={() => addCart(book)}>
                         <FontAwesomeIcon icon={faCartPlus} id={book.book_id} />
                     </IconButton>
+
                 </Card>
             </div >
         );

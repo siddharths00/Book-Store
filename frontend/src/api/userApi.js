@@ -5,7 +5,7 @@ function UserAPI(token) {
     const [isLogged, setIsLogged] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
     const [cart, setCart] = useState([])
-    const [history, setHistory] = useState([])
+    const [user, setUser] = useState({})
 
     useEffect(() =>{
         if(token){
@@ -17,7 +17,7 @@ function UserAPI(token) {
 
                     setIsLogged(true)
                     res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
-
+                    setUser(res.data);
                     setCart(res.data.cart)
 
                 } catch (err) {
@@ -50,7 +50,7 @@ function UserAPI(token) {
             })
 
         }else{
-            alert("This book has been added to cart.")
+            alert("This book has already been added to cart.")
         }
     }
 
@@ -58,7 +58,8 @@ function UserAPI(token) {
         isLogged: [isLogged, setIsLogged],
         isAdmin: [isAdmin, setIsAdmin],
         cart: [cart, setCart],
-        addCart: addCart
+        addCart: addCart,
+        user: [user, setUser]
     }
 }
 

@@ -29,13 +29,9 @@ const bookSchema = new mongoose.Schema({
     images:{
         type: Object,
         required: true
-    },
-    checked:{
-        type: Boolean,
-        default: false
     }
 }, {
-    timestamps: true //important
+    timestamps: true 
 })
 
 
