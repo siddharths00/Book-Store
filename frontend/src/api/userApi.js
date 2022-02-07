@@ -48,6 +48,7 @@ function UserAPI(token) {
             await axios.patch('/user/addcart', {cart: [...cart, {...book, quantity: 1}]}, {
                 headers: {Authorization: token}
             })
+            alert("Added book to cart.")
 
         }else{
             alert("This book has already been added to cart.")

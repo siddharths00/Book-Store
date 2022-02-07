@@ -61,7 +61,7 @@ export default function BookDetail() {
                     <div className="row">
                         <h2>{book.title}</h2>
                     </div>
-                    <span>$ {book.price}</span>
+                    <span>₹ {book.price}</span>
                     <p>{book.description}</p>
                     <Button onClick={() => addCart(book)}>Add to Cart</Button>
 
