@@ -22,7 +22,7 @@ const bookCtrl = {
     createBook: async (req, res) => {
         try {
 
-            const { book_id, title, price, description, images } = req.body.book;
+            const { book_id, title, price, description, images } = req.body;
 
             if(title.length===0 || price===0 || description.length===0 || book_id===0 || images.length==0)
             {

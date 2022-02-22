@@ -27,10 +27,10 @@ class Jumbotron extends Component {
 
     render() {
         return (
-            <div >
-                <div class="container-fluid bg-light text-dark" id="aboutus">
-                    <div class="container bg-light p-5">
-                        <h5 class="display-4 fw-bold">About Us</h5>
+            <div style={{position:"relative"}}>
+                <div className="container-fluid bg-dark text-light" id="aboutus">
+                    <div className="container bg-dark p-5">
+                        <h5 className="display-4 fw-bold">About Us</h5>
                         <h3><p>Dear readers,</p></h3>
 
                         <p>

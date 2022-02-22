@@ -82,7 +82,7 @@ function Cart() {
     const books_detail = cart.map((book) => {
 
         return (
-            <div key={book.id} className='col-12 mt-5 row'>
+            <div key={book.book_id} className='col-12 mt-5 row'>
                 <Card className='col-6'>
                     <NavLink className="nav-link" to={{
 

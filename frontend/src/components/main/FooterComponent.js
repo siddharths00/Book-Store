@@ -5,7 +5,7 @@ import { SocialIcon } from 'react-social-icons';
 
 const FooterPage = () => {
     return (
-        <MDBFooter id="footer" className="font-small pt-4 mt-4 bg-dark">
+        <MDBFooter id="footer" className="font-small pt-4 bg-dark">
             <MDBContainer fluid className="text-center text-md-left">
                 <MDBRow>
                     <MDBCol md="4">
@@ -37,16 +37,16 @@ const FooterPage = () => {
                         <h5 className="title">Links</h5>
                         <ul>
                             <li className="list-unstyled">
-                                <a href="#!"><SocialIcon url="https://twitter.com/jaketrent" /></a>
+                                <SocialIcon url="https://twitter.com" />
                             </li>
                             <li className="list-unstyled">
-                                <a href="#!"><SocialIcon url="https://youtube.com" /></a>
+                                <SocialIcon url="https://youtube.com" />
                             </li>
                             <li className="list-unstyled">
-                                <a href="#!"><SocialIcon url="https://linkedin.com" /></a>
+                                <SocialIcon url="https://linkedin.com" />
                             </li>
                             <li className="list-unstyled">
-                                <a href="#!"><SocialIcon url="https://stackoverflow.com" /></a>
+                                <SocialIcon url="https://stackoverflow.com" />
                             </li>
                         </ul>
                     </MDBCol>

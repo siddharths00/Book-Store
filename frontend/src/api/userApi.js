@@ -34,8 +34,13 @@ function UserAPI(token) {
 
     const addCart = async (book) => {
         if(!localStorage.getItem('firstLogin')){
-            alert("Please login to continue buying")
-            return
+            // alert("Please login to continue buying") 
+            // return ("Loginfirst");
+            return({
+                msg: "Please login to continue buying",
+                id: book.book_id,
+                status:400
+            });
         }
 
         const check = cart.every(item =>{
@@ -48,10 +53,21 @@ function UserAPI(token) {
             await axios.patch('/user/addcart', {cart: [...cart, {...book, quantity: 1}]}, {
                 headers: {Authorization: token}
             })
-            alert("Added book to cart.")
+            // alert("Added book to cart.")
+            return({
+                msg: "Added book to cart.",
+                id: book.book_id,
+                status:200
+            });
 
         }else{
-            alert("This book has already been added to cart.")
+            // return ("already cart");
+            return({
+                msg: "Book already in cart.",
+                id: book.book_id,
+                status:300
+            });
+            // alert("This book has already been added to cart.")
         }
     }
 

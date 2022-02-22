@@ -92,6 +92,7 @@ export default function Login() {
                                 onChange={onChangeInput}
                                 autoComplete="email"
                                 autoFocus
+                                helperText="hulo"
                             />
                             <TextField
                                 margin="normal"
@@ -104,10 +105,6 @@ export default function Login() {
                                 value={user.password}
                                 onChange={onChangeInput}
                                 autoComplete="current-password"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
-                                label="Remember me"
                             />
                             <Button
                                 type="submit"

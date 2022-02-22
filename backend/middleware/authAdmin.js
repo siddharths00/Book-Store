@@ -26,7 +26,7 @@ const authAdmin = async (req, res, next) =>{
         const user = await Users.findOne({
             _id: newUser.id
         })
-        if(user.role === 0)
+        if(user.role != 1)
         {
             res.status(400).json({msg: "Admin resources access denied"})
             return 

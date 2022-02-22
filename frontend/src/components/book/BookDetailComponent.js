@@ -28,8 +28,8 @@ import { GlobalState } from '../../GlobalState';
 
 export default function BookDetail() {
     const imgStyle = {
-        maxHeight: 150,
-        maxWidth: 150
+        maxHeight: 180,
+        maxWidth: 180
     }
     const [book, setBook] = useState({});
     const val = useParams();
@@ -52,22 +52,22 @@ export default function BookDetail() {
     }, [])
 
     return (
-        <div >
+        <div style={{backgroundColor:"#848884"}}>
             <Header />
 
             <div className="detail">
-                <Media object src={"http://localhost:3000/" + book.images} style={imgStyle} alt={book.title} />
+                <Media object src={book.images} style={imgStyle} alt={book.title} />
                 <div className="box-detail">
                     <div className="row">
                         <h2>{book.title}</h2>
                     </div>
                     <span>₹ {book.price}</span>
-                    <p>{book.description}</p>
-                    <Button onClick={() => addCart(book)}>Add to Cart</Button>
+                    <p style={{width:"300px", marginLeft:"38%"}}>{book.description}</p>
+                    <Button className='text-dark' onClick={() => addCart(book)}>Add to Cart</Button>
 
                     {
-                        tempUser[0].role ? 
-                        <NavLink className="nav-link" to={`/addbook/${book.book_id}`}><Button>Update the Details</Button></NavLink> : null
+                        tempUser[0].role === 1 ? 
+                        <NavLink className="nav-link" to={`/addbook/${book.book_id}`}><Button className='text-dark'>Update the Details</Button></NavLink> : null
                     }
                     
                 </div>
