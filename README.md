@@ -30,4 +30,21 @@ The operations supported in the file are
 * patch('/addcart') - Adds the selected book to the user's cart.
 
 
+<!-- ![alt text for screen readers](/Screenshots/'Screenshot from 2022-02-22 13-45-40.png' "Text to show on mouseover") -->
+![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-47-09.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-45-49.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-45-40.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-47-36.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-48-20.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-48-20.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-48-27.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-48-57.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-49-11.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-49-33.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-49-44.png?raw=true)
+![alt text](https://github.com/siddharths00/Book-Store/blob/master/Screenshots/Screenshot%20from%202022-02-22%2013-50-20.png?raw=true)
+
+
+
 
